@@ -248,7 +248,7 @@ services:
 
   superset:
     container_name: superset
-    image: calebebrim/superset
+    image: calebebrim/superset:latest
     volumes:
       - "./superset-init:/app/init"
       - "./superset-home:/app/superset_home"
