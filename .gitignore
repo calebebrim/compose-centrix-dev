@@ -1,0 +1,5 @@
+local_files/*
+storage/*
+temp_files/*
+supeset-home/superset.db
+superset-home/superset.db
