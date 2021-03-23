@@ -103,10 +103,12 @@ services:
     hostname: connect
     container_name: connect
     depends_on:
-      - broker
+      - kafka-broker
       # - schema-registry
     ports:
       - "8084:8084"
+    volumes:
+      - ./jars:/etc/kafka-connect/jars
     environment:
       CONNECT_BOOTSTRAP_SERVERS: "kafka-broker:29092"
       CONNECT_REST_ADVERTISED_HOST_NAME: connect
@@ -121,7 +123,7 @@ services:
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
       CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
-      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/etc/kafka-connect/jars"
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
 
   ksqldb-server:
