@@ -3,6 +3,7 @@
     "tasks.max": "5",
     "dialect.name": "PostgreSqlDatabaseDialect",
     "numeric.mapping": "best_fit",
+    "schema.pattern": "public",
     "table.types": "TABLE, VIEW",
     "mode": "timestamp+incrementing",
     "whitelist": "customer",
