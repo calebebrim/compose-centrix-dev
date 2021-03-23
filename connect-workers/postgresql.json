@@ -1,5 +1,5 @@
 {
-    "topic.prefix": "whitelist",
+    "topic.prefix": "whitelist-",
     "tasks.max": "5",
     "dialect.name": "PostgreSqlDatabaseDialect",
     "numeric.mapping": "best_fit",
